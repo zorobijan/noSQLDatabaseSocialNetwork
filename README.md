@@ -34,6 +34,6 @@ matthew bascom
 
 * matt.bijan@gmail.com
 
-* https://github.com/zorobijan/eCommerceBackEnd
+* https://github.com/zorobijan/noSQLDatabaseSocialNetwork
 
 * screencastify: https://app.castify.com/view/96679b1b-9511-4f85-b2f8-1ea582676283
