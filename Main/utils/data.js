@@ -1,4 +1,4 @@
-const {  Types } = require('mongoose');
+const { Types } = require('mongoose');
 
 const usernames = [
   'Bowser',
@@ -21,15 +21,55 @@ const usernames = [
   'Malifecent',
   'Aladdin',
   'Jack Skellington',
-  'Leonardo Dicaprio',
-  'Brad Pitt',
-  'Matt Damon',
-  'Steven Spielberg',
-  'Stanley Kubrick',
-  'Paul Thomas Anderson',
 ];
 
-const randomThoughts = [
+const emails = [
+  'testOne@test.com',
+  'testTwo@test.com',
+  'testThree@test.com',
+  'testFour@test.com',
+  'testFive@test.com',
+  'testSix@test.com',
+  'testSeven@test.com',
+  'testEight@test.com',
+  'testNine@test.com',
+  'testTen@test.com',
+  'testEleven@test.com',
+  'testTwelve@test.com',
+  'testThirteen@test.com',
+  'testFourteen@test.com',
+  'testFifteen@test.com',
+  'testSixteen@test.com',
+  'testSeventeen@test.com',
+  'testEighteen@test.com',
+  'testNineteen@test.com',
+  'testTwenty@test.com',
+];
+
+const friends = [
+  'Madonna',
+  'Eminem',
+  'Weezy',
+  'GhostfaceKillah',
+  'MethodMan',
+  'RZA',
+  'GZA',
+  'ODC',
+  'InspectahDeck',
+  'MastahKillah',
+  'UGod',
+  'Kanye',
+  'MFDoom',
+  'Tupak',
+  'BIG',
+  'Muddy Waters',
+  'Pinhead',
+  'JPEGMAFIA',
+  'Denzel Curry',
+  'Jidenna',
+];
+
+const thoughts = [
   'I could lose weight',
   'Did I leave the oven on?',
   'I should buy a boat',
@@ -50,24 +90,29 @@ const randomThoughts = [
   'I need to rewatch the Wire',
   'She totally wanted my number',
   'I am going back to that store and buying that jacket',
-  'I am done drinking',
-  'I am done smoking',
-  'Have I been getting enough sleep?',
 ];
+
+
 
 // Get a random item given an array
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 // Gets a random full name
 const getRandomUserName = () =>
-  `${getRandomArrItem(usernames)} ${getRandomArrItem(usernames)}`;
+  `${getRandomArrItem(usernames)}`;
+// Gets a random email
+const getRandomEmail = () =>
+  `${getRandomArrItem(emails)}`;
+
+const getRandomFriend = () =>
+`${getRandomArrItem(friends)}`;
 
 // Function to generate random thoughts that we can add to user object.
 const getRandomThoughts = (int) => {
   const results = [];
   for (let i = 0; i < int; i++) {
     results.push({
-      thoughtText: getRandomArrItem(randomThoughts),
+      thoughtText: getRandomArrItem(thoughts),
       username: getRandomArrItem(usernames)
     });
   }
@@ -75,4 +120,4 @@ const getRandomThoughts = (int) => {
 };
 
 // Export the functions for use in seed.js
-module.exports = { getRandomUserName, getRandomThoughts };
+module.exports = { getRandomUserName, getRandomEmail, getRandomFriend, getRandomThoughts };

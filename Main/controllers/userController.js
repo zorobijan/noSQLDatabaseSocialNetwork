@@ -40,7 +40,7 @@ module.exports = {
       });
   },
   // Get a single user
-  getSingleuser(req, res) {
+  getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
       .select('-__v')
       .then(async (user) =>
@@ -63,8 +63,8 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
   // Delete a user and remove them from the course
-  deleteuser(req, res) {
-    user.findOneAndRemove({ _id: req.params.userId })
+  deleteUser(req, res) {
+    User.findOneAndRemove({ _id: req.params.userId })
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No such user exists' })

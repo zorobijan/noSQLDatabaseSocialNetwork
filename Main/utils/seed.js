@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 const { Thought, User } = require('../models');
-const { getRandomName, getRandomThoughts } = require('./data');
+const { getRandomUserName, getRandomEmail, getRandomFriend, getRandomThoughts } = require('./data');
 
 connection.on('error', (err) => err);
 
@@ -19,14 +19,15 @@ connection.once('open', async () => {
   // Loop 20 times -- add users to the users array
   for (let i = 0; i < 20; i++) {
     // Get some random thought objects using a helper function that we imported from ./data
-    const thoughts = getRandomthoughts(20);
-
+    const thoughts = getRandomThoughts(20);
     const username = getRandomUserName();
+    const email = getRandomEmail();
+    const friend = getRandomFriend();
 
     users.push({
       username,
       email,
-      friends,
+      friend,
       thoughts,
     });
   }
